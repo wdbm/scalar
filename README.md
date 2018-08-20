@@ -42,3 +42,13 @@ An alert message can be send in Python, in a way like the following:
 import scalar
 scalar.alert(message="alert")
 ```
+
+[megaparsex](https://github.com/wdbm/megaparsex) can be used with scalar to send data via messages, in ways like the following:
+
+```Python
+import megaparsex
+import scalar
+scalar.alert(message=megaparsex.report_IP())
+scalar.alert(message=megaparsex.report_system_status())
+scalar.alert(message=megaparsex.report_METAR("EGPF"))
+```
