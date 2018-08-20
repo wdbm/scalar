@@ -1,6 +1,6 @@
 # scalar
 
-Python Matrix library
+Python Matrix library, built on the [Matrix Client-Server SDK](https://github.com/matrix-org/matrix-python-sdk)
 
 # setup
 
