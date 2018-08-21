@@ -39,7 +39,7 @@ options:
 """
 
 name        = "scalar"
-__version__ = "2018-08-20T1511Z"
+__version__ = "2018-08-21T0752Z"
 
 import sys
 if sys.version_info[0] <= 2:

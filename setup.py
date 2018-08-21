@@ -7,7 +7,7 @@ import setuptools
 def main():
     setuptools.setup(
         name                 = "scalar",
-        version              = "2018.08.20.1511",
+        version              = "2018.08.21.0752",
         description          = "Python Matrix library",
         long_description     = long_description(),
         url                  = "https://github.com/wdbm/scalar",
@@ -18,6 +18,7 @@ def main():
         install_requires     = [
                                "docopt",
                                "matrix_client",
+                               "pyyaml",
                                "technicolor"
                                ],
         python_requires      = ">=3",
