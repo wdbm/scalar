@@ -19,14 +19,20 @@ The configuration file contents should be like the following:
 
 ```YAML
 {
-    "homeserver": "https://matrix.example.pro:8448",
-    "username"  : "scriptwire",
-    "passcode"  : "qo3i4tbc35wgtt4gbwikgvtib3ctgt7bgi3rgw",
-    "room_alias": "!cgOnMzaBWCLjBnhGiB:matrix.example.org"
+    "configurations": {
+        "scriptwire": {
+            "default"   : True,
+            "homeserver": "https://matrix.example.pro:8448",
+            "username"  : "scriptwire",
+            "passcode"  : "qo3i4tbc35wgtt4gbwikgvtib3ctgt7bgi3rgw",
+            "room_alias": "!cgOnMzaBWCLjBnhGiB:matrix.example.org"
+        }
+    },
+    "version_config": "2018-08-23T1930Z"
 }
 ```
 
-The room must be one to which the account has been invited.
+There can be multiple configurations, such as for separate accounts. One configuration must be set as the default if a configuration is not specified on setup. A room must be one to which the account has been invited.
 
 # alert
 
@@ -51,4 +57,15 @@ import scalar
 scalar.alert(message=megaparsex.report_IP())
 scalar.alert(message=megaparsex.report_system_status())
 scalar.alert(message=megaparsex.report_METAR("EGPF"))
+```
+
+# upload and send text, files, audio, images and video
+
+```Python
+import scalar
+scalar.send_text("test")
+scalar.send_file("test.csv")
+scalar.send_audio("test.ogg")
+scalar.send_image("test.gif")
+scalar.send_video("test.mp4")
 ```
