@@ -1,0 +1,13 @@
+\documentclass[border={4pt 4pt 4pt 4pt}]{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}[scale=.5]
+    \foreach \x in {0,...,26}
+    \foreach \y in {0,...,8}
+    {
+        \node[shape=circle,fill={rgb:red,0;green,51;blue,160},scale=0.2] (\x-\y) at (\x,\y){};
+    }
+    \draw (25-7) circle (0.5cm);
+    \draw (13-4) node {\includegraphics[width=10.5cm]{scalar_text.png}};
+\end{tikzpicture}
+\end{document}
