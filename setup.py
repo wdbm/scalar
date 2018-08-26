@@ -7,7 +7,7 @@ import setuptools
 def main():
     setuptools.setup(
         name                 = "scalar",
-        version              = "2018.08.26.2157",
+        version              = "2018.08.26.2158",
         description          = "Python Matrix library",
         long_description     = long_description(),
         url                  = "https://github.com/wdbm/scalar",
@@ -22,7 +22,7 @@ def main():
                                "pyyaml",
                                "technicolor"
                                ],
-        python_requires      = ">=3",
+        #python_requires      = ">=3",
         entry_points         = {
                                "console_scripts": ("scalar_alert = scalar.__init__:alert")
                                },

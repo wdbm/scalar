@@ -55,7 +55,7 @@ from matrix_client.client import MatrixClient
 import technicolor
 
 name        = "scalar"
-__version__ = "2018-08-26T2157Z"
+__version__ = "2018-08-26T2158Z"
 
 log = logging.getLogger(name)
 log.addHandler(technicolor.ColorisingStreamHandler())
