@@ -39,20 +39,23 @@ options:
 """
 
 import sys
-if sys.version_info[0] <= 2:
-    print("Python >2 required")
-    sys.exit(1)
+#if sys.version_info[0] <= 2:
+#    print("Python >2 required")
+#    sys.exit(1)
 import docopt
 import logging
 import mimetypes
-from pathlib import Path
+if sys.version_info[0] <= 2:
+    from pathlib2 import Path
+else:
+    from pathlib import Path
 import yaml
 
 from matrix_client.client import MatrixClient
 import technicolor
 
 name        = "scalar"
-__version__ = "2018-08-23T1930Z"
+__version__ = "2018-08-26T2157Z"
 
 log = logging.getLogger(name)
 log.addHandler(technicolor.ColorisingStreamHandler())
@@ -84,7 +87,7 @@ def setup(path_config="~/.config/scalar/config.yaml", configuration_name=None):
         with open(str(path_config), "r") as _file:
             config = yaml.load(_file)
     if not configuration_name:
-        for configuration in config["configurations"].items():
+        for configuration in list(config["configurations"].items()):
             if configuration[1]["default"]:
                 config = configuration[1]
     else:
