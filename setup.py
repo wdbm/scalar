@@ -7,7 +7,7 @@ import setuptools
 def main():
     setuptools.setup(
         name                 = "scalar",
-        version              = "2018.08.26.2158",
+        version              = "2018.08.27.1512",
         description          = "Python Matrix library",
         long_description     = long_description(),
         url                  = "https://github.com/wdbm/scalar",

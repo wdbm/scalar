@@ -55,7 +55,7 @@ from matrix_client.client import MatrixClient
 import technicolor
 
 name        = "scalar"
-__version__ = "2018-08-26T2158Z"
+__version__ = "2018-08-27T1512Z"
 
 log = logging.getLogger(name)
 log.addHandler(technicolor.ColorisingStreamHandler())
@@ -108,10 +108,12 @@ def ensure_setup():
 def alert(message=None):
     ensure_setup()
     global config
-    global options
-    options = docopt.docopt(__doc__)
     if not message:
-        message = options["--message"]
+        if __name__ == "__main__":
+            options = docopt.docopt(__doc__, version=__version__)
+            message = options["--message"]
+        else:
+            message = "alert"
     log.debug("send message {message} to room {room_alias} on homeserver {homeserver}".format(
         message    = message,
         room_alias = config["room_alias"],
