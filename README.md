@@ -34,6 +34,16 @@ The configuration file contents should be like the following:
 
 There can be multiple configurations, such as for separate accounts. One configuration must be set as the default if a configuration is not specified on setup. A room must be one to which the account has been invited.
 
+# client
+
+A scalar terminal client can be launched in the following way:
+
+```Bash
+scalar_client
+```
+
+![](https://raw.githubusercontent.com/wdbm/scalar/master/media/scalar_client.png)
+
 # alert
 
 An alert message can be sent on the terminal, in a way like the following:
