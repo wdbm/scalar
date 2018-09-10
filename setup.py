@@ -7,7 +7,7 @@ import setuptools
 def main():
     setuptools.setup(
         name                 = "scalar",
-        version              = "2018.08.27.1512",
+        version              = "2018.09.10.2016",
         description          = "Python Matrix library",
         long_description     = long_description(),
         url                  = "https://github.com/wdbm/scalar",
@@ -19,12 +19,16 @@ def main():
                                "docopt",
                                "matrix_client",
                                "megaparsex",
+                               "pyprel",
                                "pyyaml",
                                "technicolor"
                                ],
         #python_requires      = ">=3",
         entry_points         = {
-                               "console_scripts": ("scalar_alert = scalar.__init__:alert")
+                               "console_scripts": [
+                                   "scalar_alert  = scalar.__init__:alert",
+                                   "scalar_client = scalar.client:main"
+                               ]
                                },
         include_package_data = True,
         zip_safe             = False
